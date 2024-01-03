@@ -1,0 +1,187 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #979797;
+  }
+  
+  .iphone {
+    border-radius: 40px;
+    background-color: #000;
+    width: 250px;
+    height: 512px; /* Adjust to match iPhone screen dimensions */
+    padding-top: 0px;
+ 
+    overflow: hidden;
+    box-shadow: 0 0 30px 15px rgba(55, 52, 52, 0.541);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 5px solid #000; /* Thin border on the left side */
+  border-right: 5px solid #000; /* Thin border on the right side */
+  
+  }
+  
+
+  .status-icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  .time {
+    font-size: 16px;
+    margin-left: 10px;
+  }
+  
+
+  .iphone-search {
+    width: 50px; /* Adjust width */
+    height: 15px; /* Adjust height */
+    background-color: rgba(172, 163, 163, 0.5); /* Translucent white color */
+    border-radius: 12px; /* Oval shape */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    z-index: 1; /* Ensure it appears above the background */
+  }
+  
+
+
+  .iphone-header {
+    height: 5px; /* Adjusted header height for a thinner black outline */
+    background-color: #000000;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-top: 1px; /* Add a small margin to ensure visibility */
+    position: relative;
+    color: aliceblue;
+
+
+    /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  }
+
+  .iphone-status {
+    display: flex;
+    align-items: center;
+    margin-right: 13px;
+  }
+  
+  /* .status-icon {
+    font-size: 10px; Adjust the font size for smaller icons
+    margin-left: 10px;
+  } */
+  .status-icon{
+    font-size: 8px; /* Adjust the font size for smaller icons */
+    margin-top: 10px;
+
+
+  }
+  
+  .time {
+    font-size: 12px;
+    margin-right: auto;
+   margin-top: 12px;
+   margin-left: 30px;
+  }
+
+
+  .iphone-camera {
+    position: absolute;
+    top: 9px; /* Adjust the distance from the top */
+    left: 50%; /* Adjust the horizontal position */
+    transform: translateX(-50%);
+    width: 70px; /* Adjust the width of the oval */
+    height: 20px; /* Adjust the height of the oval */
+    background-color: black; /* Oval color */
+    border-radius: 10px; /* Create an oval shape */
+    box-shadow: inset 0px 2px 3px rgba(255, 255, 255, 0.5); /* Simulate camera depth */
+    z-index: 1; /* Ensure it appears above the background */
+  }
+
+
+
+  
+  .iphone-screen {
+    background-image: url(
+        'iphonebackground.png'
+    );
+    background-size: cover;
+  background-position: center;
+    padding: 20px 10px;
+    overflow: hidden; /* Hide the scrollbar */
+    display: flex;
+    flex-wrap: wrap; /* Allow icons to wrap to the next line */
+    justify-content: space-around; /* Center icons horizontally */
+    align-content: flex-start; /* Align icons to the top of the container */
+    border-radius: 40px;
+
+
+  }
+  
+  .iphone-footer {
+    height: 5px; /* Reduced footer height for a thinner black outline */
+    background-color: #d71313;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #000;
+    padding-top: 0px;
+    
+  }
+  
+  .iphone-icons {
+    display: flex;
+    flex-wrap: wrap; /* Allow icons to wrap to the next line */
+    justify-content: center; /* Center icons horizontally */
+    align-items: flex-start; /* Align icons to the top of the container */
+    margin-top: 10px;
+  }
+  
+  
+  .app-icon {
+    text-align: center;
+    margin: 10px; /* Adjust margin between icons */
+    flex: 0 0 calc(25% - 20px); /* Adjust the icon width and margins */
+    max-width: calc(25% - 20px); /* Adjust the icon width and margins */
+  }
+  
+  
+  .app-icon img {
+    width: 35px; /* Reduced icon size */
+    height: 35px; /* Reduced icon size */
+    border-radius: 8px;
+    margin-bottom: 3px; /* Reduced bottom margin */
+  }
+  
+  .app-icon p {
+    margin: 0;
+    font-size: 12px; /* Reduced font size */
+    color: #333;
+  }
+  /* Existing styles */
+
+/* Empty row styling */
+.empty-row {
+    height: 20px; /* Adjust the height of the empty row as needed */
+    flex: 0 0 calc(25% - 20px); /* Adjust the icon width and margins */
+  /* max-width: calc(25% - 20px); Adjust the icon width and margins */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+ 
+  }
+
+ 
+ 
+  
+  /* Styling for the row of apps at the bottom */
+  .bottom-apps {
+    display: flex;
+    justify-content: space-around;
+    /* Add additional styling as needed for the bottom row of apps */
+  }
+  
+  /* Other styles... */
+  
+  
