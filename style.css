@@ -5,6 +5,8 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #979797;
+    font-family: Arial, Helvetica, sans-serif;
+    color: azure;
   }
   
   .iphone {
@@ -21,6 +23,7 @@ body {
     justify-content: space-between;
     border-left: 5px solid #000; /* Thin border on the left side */
   border-right: 5px solid #000; /* Thin border on the right side */
+  border-top: 5px;
   
   }
   
@@ -38,20 +41,33 @@ body {
   .iphone-search {
     width: 50px; /* Adjust width */
     height: 15px; /* Adjust height */
-    background-color: rgba(172, 163, 163, 0.5); /* Translucent white color */
+    background-color: rgba(44, 42, 42, 0.227); /* Translucent white color */
     border-radius: 12px; /* Oval shape */
     backdrop-filter: blur(10px); /* Apply blur effect */
     z-index: 1; /* Ensure it appears above the background */
+    text-align: center;
+  
   }
   
+  .bottom-apps-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(88, 80, 80, 0.392); /* Semitranslucent white */
+    border-radius: 34px; /* Rounded corners */
+    backdrop-filter: blur(20px); /* Apply blur effect */
+   padding: 5px;
+   max-height: 65px;
+   width: 1000%;
 
+  }
 
   .iphone-header {
-    height: 5px; /* Adjusted header height for a thinner black outline */
+    height: 3px; /* Adjusted header height for a thinner black outline */
     background-color: #000000;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    margin-top: 1px; /* Add a small margin to ensure visibility */
+    margin-top: 5px; /* Add a small margin to ensure visibility */
     position: relative;
     color: aliceblue;
 
@@ -88,7 +104,7 @@ body {
 
   .iphone-camera {
     position: absolute;
-    top: 9px; /* Adjust the distance from the top */
+    top: 10px; /* Adjust the distance from the top */
     left: 50%; /* Adjust the horizontal position */
     transform: translateX(-50%);
     width: 70px; /* Adjust the width of the oval */
@@ -108,6 +124,7 @@ body {
     );
     background-size: cover;
   background-position: center;
+  /* background-color: rgb(87, 91, 96); */
     padding: 20px 10px;
     overflow: hidden; /* Hide the scrollbar */
     display: flex;
@@ -115,6 +132,9 @@ body {
     justify-content: space-around; /* Center icons horizontally */
     align-content: flex-start; /* Align icons to the top of the container */
     border-radius: 40px;
+    
+
+
 
 
   }
@@ -140,15 +160,30 @@ body {
   
   .app-icon {
     text-align: center;
-    margin: 10px; /* Adjust margin between icons */
+    margin: 8px; /* Adjust margin between icons */
     flex: 0 0 calc(25% - 20px); /* Adjust the icon width and margins */
     max-width: calc(25% - 20px); /* Adjust the icon width and margins */
+  }
+  .app-icon {
+    position: relative;
+    text-align: center;
+ 
+  }
+  
+  .app-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Hide the button visually */
+    cursor: pointer;
   }
   
   
   .app-icon img {
-    width: 35px; /* Reduced icon size */
-    height: 35px; /* Reduced icon size */
+    width: 38px; /* Reduced icon size */
+    height: 38px; /* Reduced icon size */
     border-radius: 8px;
     margin-bottom: 3px; /* Reduced bottom margin */
   }
@@ -184,4 +219,23 @@ body {
   
   /* Other styles... */
   
+  * {
+    caret-color: transparent; /* Hide the text cursor for all elements */
+    user-select: none; /* Disable text selection for all elements */
+  }
+
+  button.app-button {
+    cursor: pointer; /* Set cursor to pointer for buttons */
+  }
+
+  .centered-image {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+
+
   
