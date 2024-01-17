@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple iPhone Layout</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<!-- <script src="javascript.js" defer></script>
+  -->
+  <style>
+    body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #979797;
+  font-family: Arial, Helvetica, sans-serif;
+  color: azure;
+}
+
+.iphone {
+  border-radius: 40px;
+  background-color: #000;
+  width: 250px;
+  height: 512px; /* Adjust to match iPhone screen dimensions */
+  padding-top: 0px;
+
+  overflow: hidden;
+  box-shadow: 0 0 30px 15px rgba(55, 52, 52, 0.541);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 5px solid #000; /* Thin border on the left side */
+border-right: 5px solid #000; /* Thin border on the right side */
+border-top: 5px;
+
+}
+
+
+.status-icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+.time {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+
+.iphone-search {
+  width: 50px; /* Adjust width */
+  height: 15px; /* Adjust height */
+  background-color: rgba(44, 42, 42, 0.227); /* Translucent white color */
+  border-radius: 12px; /* Oval shape */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  z-index: 1; /* Ensure it appears above the background */
+  text-align: center;
+
+}
+
+.bottom-apps-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(88, 80, 80, 0.392); /* Semitranslucent white */
+  border-radius: 34px; /* Rounded corners */
+  backdrop-filter: blur(20px); /* Apply blur effect */
+ padding: 5px;
+ max-height: 65px;
+ width: 1000%;
+
+}
+
+.iphone-header {
+  height: 3px; /* Adjusted header height for a thinner black outline */
+  background-color: #000000;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-top: 5px; /* Add a small margin to ensure visibility */
+  position: relative;
+  color: aliceblue;
+
+
+  /* display: flex;
+justify-content: space-between;
+align-items: center; */
+}
+
+.iphone-status {
+  display: flex;
+  align-items: center;
+  margin-right: 13px;
+}
+
+/* .status-icon {
+  font-size: 10px; Adjust the font size for smaller icons
+  margin-left: 10px;
+} */
+.status-icon{
+  font-size: 8px; /* Adjust the font size for smaller icons */
+  margin-top: 10px;
+
+
+}
+
+.time {
+  font-size: 12px;
+  margin-right: auto;
+ margin-top: 12px;
+ margin-left: 30px;
+}
+
+
+.iphone-camera {
+  position: absolute;
+  top: 10px; /* Adjust the distance from the top */
+  left: 50%; /* Adjust the horizontal position */
+  transform: translateX(-50%);
+  width: 70px; /* Adjust the width of the oval */
+  height: 20px; /* Adjust the height of the oval */
+  background-color: black; /* Oval color */
+  border-radius: 10px; /* Create an oval shape */
+  box-shadow: inset 0px 2px 3px rgba(255, 255, 255, 0.5); /* Simulate camera depth */
+  z-index: 1; /* Ensure it appears above the background */
+}
+
+
+
+
+.iphone-screen {
+  background-image: url(
+      'iphonebackground.png'
+  );
+  background-size: cover;
+background-position: center;
+/* background-color: rgb(87, 91, 96); */
+  padding: 20px 10px;
+  overflow: hidden; /* Hide the scrollbar */
+  display: flex;
+  flex-wrap: wrap; /* Allow icons to wrap to the next line */
+  justify-content: space-around; /* Center icons horizontally */
+  align-content: flex-start; /* Align icons to the top of the container */
+  border-radius: 40px;
+
+}
+
+.iphone-footer {
+  height: 5px; /* Reduced footer height for a thinner black outline */
+  background-color: #d71313;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #000;
+  padding-top: 0px;
+  
+}
+
+.iphone-icons {
+  display: flex;
+  flex-wrap: wrap; /* Allow icons to wrap to the next line */
+  justify-content: center; /* Center icons horizontally */
+  align-items: flex-start; /* Align icons to the top of the container */
+  margin-top: 10px;
+}
+
+
+.app-icon {
+  text-align: center;
+  margin: 8px; /* Adjust margin between icons */
+  flex: 0 0 calc(25% - 20px); /* Adjust the icon width and margins */
+  max-width: calc(25% - 20px); /* Adjust the icon width and margins */
+}
+.app-icon {
+  position: relative;
+  text-align: center;
+
+}
+
+.app-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Hide the button visually */
+  cursor: pointer;
+}
+
+
+.app-icon img {
+  width: 38px; /* Reduced icon size */
+  height: 38px; /* Reduced icon size */
+  border-radius: 8px;
+  margin-bottom: 3px; /* Reduced bottom margin */
+}
+
+.app-icon p {
+  margin: 0;
+  font-size: 12px; /* Reduced font size */
+  color: #333;
+}
+/* Existing styles */
+
+/* Empty row styling */
+.empty-row {
+  height: 20px; /* Adjust the height of the empty row as needed */
+  flex: 0 0 calc(25% - 20px); /* Adjust the icon width and margins */
+/* max-width: calc(25% - 20px); Adjust the icon width and margins */
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+
+}
+
+
+
+
+/* Styling for the row of apps at the bottom */
+.bottom-apps {
+  display: flex;
+  justify-content: space-around;
+  /* Add additional styling as needed for the bottom row of apps */
+}
+
+/* Other styles... */
+
+* {
+  caret-color: transparent; /* Hide the text cursor for all elements */
+  user-select: none; /* Disable text selection for all elements */
+}
+
+button.app-button {
+  cursor: pointer; /* Set cursor to pointer for buttons */
+}
+
+.centered-image {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+  </style>
+</head>
+<body >
+  <div class="iphone ">
+    <div class="iphone-header normal-content">
+        <div class="iphone-status ">
+            <span class="time" id="clock">00:00</span> <!-- Time -->
+            <span class="status-icon"><i class="fas fa-signal"></i></span> <!-- Cellular icon -->
+            <span class="status-icon"><i class="fas fa-wifi"></i></span> <!-- Wi-Fi icon -->
+            <span class="status-icon"><i class="fas fa-battery-full"></i></span> <!-- Battery icon -->
+          </div>
+        <div class="iphone-camera"></div></div>
+    
+    <div class="iphone-screen normal-content"  >
+      <div class="iphone-icons">
+        <!-- Start of App Icons -->
+        <div class="app-icon">
+            <img src="iphonebackground.png" alt="">
+            <button  id=blank-button class="app-button"></button>
+            <p>App</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>App</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>App</p>
+          </div>
+        <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>App</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+        <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>App</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>App</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+
+      </div>
+
+
+
+
+
+      <div class="empty-row">
+        <div class="iphone-search" style="font-size: 10px;">Search</div>
+      </div>
+      <!-- Row of apps at the bottom -->
+
+      <div class="bottom-apps-wrapper normal-content">
+      <div class="bottom-apps normal-content">
+        <!-- Add app icons for the bottom row -->
+        <div class="app-icon">
+          <img src="icon.png" alt="">
+          <button class="app-button"></button>
+          <p>app</p>
+        </div>
+        <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+          <img src="icon.png" alt="">
+          <button class="app-button"></button>
+          <p>app</p>
+        </div>
+    </div>
+  </div>
+</div>
+
+    <div class="iphone-footer normal-content"></div>
+   
+  </div>
+<script>
+  function updateTime() {
+  const clock = document.getElementById('clock');
+  const now = new Date();
+  let hours = now.getHours();
+  const amPm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12 || 12; // Convert to 12-hour format
+  const minutes = now.getMinutes().toString().padStart(2, '0'); // Format minutes (two digits)
+  const timeString = `${hours}:${minutes} ${amPm}`;
+  clock.textContent = timeString; // Update the time in the clock element
+
+  // Update every second
+  setTimeout(updateTime, 1000);
+}
+
+// Call updateTime function to start updating the time
+updateTime();
+
+
+
+
+
+</script>
+  
+</body>
+
+
+
+</html>
+
+
+
+
