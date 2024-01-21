@@ -104,3 +104,21 @@
 document.getElementById("myButton").addEventListener("click", function() {
         window.location.href = "your_page_url.html";
     });
+
+
+function sendEmail() {
+  // Replace 'recipient@example.com' with the actual email address
+  var emailAddress = 'recipient@example.com';
+
+  // Replace 'Subject' and 'Body' with your desired email subject and body
+  var emailSubject = 'Your Custom Subject';
+  var emailBody = 'Your Custom Body';
+
+  // Construct the mailto URL
+  var mailtoURL = 'mailto:' + emailAddress + '?subject=' + encodeURIComponent(emailSubject) + '&body=' + encodeURIComponent(emailBody);
+
+  // Open the default email client
+  window.location.href = mailtoURL;
+}
+
+
