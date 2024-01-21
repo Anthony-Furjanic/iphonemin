@@ -1,1 +1,102 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How-To Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #cacaca;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #667c99;
+      font-size: 1.em; /* Match the default font size of h2 */
+  font-weight: bold; /* Match the default font weight of h2 */
+    }
+    h2{
+      font-size: 15px;
+      color: #4c4c4c;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>how to make changes</h1>
+  </header>
+
+  <main>
+    <h2>Welcome to the How-To section of the admin version of the Corp Mobility Simulator site! if you are here you are you are looking to make changes to the site.  A few key things to remember...
+
+<br>
+<br>
+<br>
+        First and foremost, dont be nervous. As long as you follow the Golden rule and dont make any changes to the master template , everything is reversible!
+        
+        (even if you do make a change to the master copy its still reversible in most if not all cases, but as good practice you want to avoid this if possible)
+        
+<br>
+<br>
+<br>   
+         If you do make any changes that cause an unintended change to the site ,  vs code holds a localized timeline of recent saves to the project so you can always expand the timeline and go to a recent version before you made the change (see how to section "how to revert to a previous save in the project")
+        
+<br>
+<br>
+<br>
+         Anything you see in green text is commentation on the code and not part of the code itself , I have notated code that is crucial to the inner workings of the application with  the notation at the top of the code ***CRUCIAL APPLICATION STRUCTURE, NOT RECCOMENDED TO MAKE ANY CHANGES*** and at the end of that section you will see the notation ***END OF CRUCIAL STRUCTURE SECTION***
+<br>
+    
+        
+         This means that the code plays a crucial role in the inner workings of the application, it should not be changed by anyone unless they have at least a high end novice to Low end intermediate knowledge of HTML,CSS, and Javascript
+<br>
+<br>
+<br>
+        
+        On the flipside of that , there are sections of code that are able to be simply changed by design and require little to no coding knowledge to edit. They have clearly listed How-to instructions in the sections below and can be edited with zero or near zero effects to the inner workings of the application. 
+        
+        
+        </h2>
+    <ul>
+      <li><a href="changeappicons.html">Change app icons&#128736;</a></li>
+      <li><a href="changepagebackground.html">Change page backround &#128736;</a></li>
+      <li><a href="#option3">Revert to a previous save in the project &#128736;</a></li>
+      <li><a href="changeappicons.html">Change app icon name &#128736;</a></li>
+      <li><a href="changepagebackground.html">Change &#128736;</a></li>
+
+      
+      <!-- Add more options as needed -->
+    </ul>
+  </main>
+
+</body>
+</html>
