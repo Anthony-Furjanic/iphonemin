@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple iPhone Layout</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<!-- <script src="javascript.js" defer></script>
+  -->
+  <style>
+    body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* background: linear-gradient(to bottom,#959494,#ff90dcdc ,#eb63bdfb ); */
+  background-color: #ababb6f8;
+  font-family: Arial, Helvetica, sans-serif;
+  color: azure;
+}
+
+.iphone {
+  border-radius: 40px;
+  background-color: #000;
+  width: 250px;
+  height: 512px; /* Adjust to match iPhone screen dimensions */
+  padding-top: 0px;
+  overflow: hidden;
+  box-shadow: 7px 15px 30px 5px #292927;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 5px solid #000; /* Thin border on the left side */
+border-right: 5px solid #000; /* Thin border on the right side */
+border-top: 5px;
+align-content: center;
+
+
+
+}
+
+
+.status-icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+.time {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+
+.iphone-search {
+  width: 50px; /* Adjust width */
+  height: 15px; /* Adjust height */
+  background-color: rgba(44, 42, 42, 0.227); /* Translucent white color */
+  border-radius: 12px; /* Oval shape */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  z-index: 1; /* Ensure it appears above the background */
+  text-align: center;
+  position: relative;
+  margin-bottom: 12px;
+  justify-content: center;
+  margin-bottom: 20px;
+
+}
+
+.bottom-apps-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(88, 80, 80, 0.392); /* Semitranslucent white */
+  border-radius: 34px; /* Rounded corners */
+  backdrop-filter: blur(20px); /* Apply blur effect */
+  padding: 5px;
+  max-height: 75px;
+  width: 99%;
+  margin: 0 auto; /* Center the wrapper horizontally */
+  position: relative;
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
+.bottom-apps {
+  display: flex;
+  justify-content: space-around;
+  width: 100%; /* Make sure it takes the full width */
+  padding: 0%;
+  padding-right: 0%;
+}
+
+
+.iphone-header {
+  height: 3px; /* Adjusted header height for a thinner black outline */
+  background-color: #000000;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-top: 5px; /* Add a small margin to ensure visibility */
+  position: relative;
+  color: aliceblue;
+
+
+  /* display: flex;
+justify-content: space-between;
+align-items: center; */
+}
+
+.iphone-status {
+  display: flex;
+  align-items: center;
+  margin-right: 13px;
+}
+
+/* .status-icon {
+  font-size: 10px; Adjust the font size for smaller icons
+  margin-left: 10px;
+} */
+.status-icon{
+  font-size: 8px; /* Adjust the font size for smaller icons */
+  margin-top: 10px;
+
+
+}
+
+.time {
+  font-size: 10px;
+  margin-right: auto;
+ margin-top: 12px;
+ margin-left: 30px;
+}
+
+
+.iphone-camera {
+  position: absolute;
+  top: 10px; /* Adjust the distance from the top */
+  left: 50%; /* Adjust the horizontal position */
+  transform: translateX(-50%);
+  width: 70px; /* Adjust the width of the oval */
+  height: 20px; /* Adjust the height of the oval */
+  background-color: black; /* Oval color */
+  border-radius: 10px; /* Create an oval shape */
+  box-shadow: inset 0px 2px 3px rgba(255, 255, 255, 0.5); /* Simulate camera depth */
+  z-index: 1; /* Ensure it appears above the background */
+}
+
+
+
+
+.iphone-screen {
+  background-image: url(
+      'iphonebackground.png'
+  );
+  background-size: cover;
+background-position: center;
+/* background-color: rgb(87, 91, 96); */
+  padding: 20px 10px;
+  /* overflow: hidden; 
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-around; 
+  align-content: flex-start;
+  border-radius: 40px; */
+  overflow: hidden; 
+  border-radius: 40px;
+  align-content: center;
+  align-items: center;
+
+
+
+
+}
+
+.iphone-footer {
+  height: 5px; /* Reduced footer height for a thinner black outline */
+  background-color: #d71313;
+  /* border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px; */
+  background-color: #000;
+  padding-top: 0px;
+  
+}
+
+.iphone-icons {
+  /* display: flex;
+  flex-wrap: wrap; Allow icons to wrap to the next line
+  justify-content: center; Center icons horizontally
+  align-items: flex-start; Align icons to the top of the container
+  margin-top: 10px; */
+  display: flex;
+  justify-content: space-around;
+
+}
+
+
+.app-icon {
+  text-align: center;
+  margin: 8px; /* Adjust margin between icons */
+  flex: 0 0 calc(25% - 20px); /* Adjust the icon width and margins */
+  max-width: calc(25% - 20px); /* Adjust the icon width and margins */
+}
+.app-icon {
+  position: relative;
+  text-align: center;
+
+}
+
+
+.app-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Hide the button visually */
+  cursor: pointer;
+}
+
+
+.app-icon img {
+  width: 38px; /* Reduced icon size */
+  height: 38px; /* Reduced icon size */
+  border-radius: 8px;
+  margin-bottom: 3px; /* Reduced bottom margin */
+}
+
+.app-icon p {
+  margin: 0;
+  font-size: 12px; /* Reduced font size */
+  color: #333;
+}
+/* Existing styles */
+
+/* Empty row styling */
+.empty-row {
+  height: 30px; /* Adjust the height of the empty row as needed */
+  flex: 0 0 calc(25% - 20px); /* Adjust the icon width and margins */
+/* max-width: calc(25% - 20px); Adjust the icon width and margins */
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 11px;
+
+}
+
+
+
+
+/* Styling for the row of apps at the bottom */
+.bottom-apps {
+  display: flex;
+  justify-content: space-around;
+  /* Add additional styling as needed for the bottom row of apps */
+}
+
+/* Other styles... */
+
+* {
+  caret-color: transparent; /* Hide the text cursor for all elements */
+  user-select: none; /* Disable text selection for all elements */
+}
+
+button.app-button {
+  cursor: pointer; /* Set cursor to pointer for buttons */
+}
+
+
+
+    
+.container{
+  
+  width: 200%;
+  height: 350px;
+  transition: transform 0.3s ease-in-out;
+  cursor: grab;
+  overflow: hidden; 
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: flex-start; 
+  align-items:flex-start;
+  margin-top: 20px;
+ 
+
+ 
+}
+
+.page {
+      width: 50%;
+      /* height: 100vh; */
+      display: flex;
+  flex-wrap: wrap; 
+  justify-content: center; 
+  align-items: flex-start;
+  margin-top: 10px;
+    }
+/* Add this CSS to your existing styles */
+.swipe-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+
+
+.swipe-dots {
+  visibility: hidden;
+  background-color: rgba(44, 42, 42, 0.227); /* Translucent white color */
+  border-radius: 12px; /* Oval shape */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  width: 50px; /* Adjust width */
+  height: 15px; /* Adjust height */
+  background-color: rgba(44, 42, 42, 0.227); /* Translucent white color */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  z-index: 1; /* Ensure it appears above the background */
+
+  position: relative;
+  align-items: center;
+  justify-content: space-around;
+  
+}
+
+.swipe-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  /* margin:  5px; */
+  background-color: rgb(81, 81, 81); /* Default color */
+  transition: background-color 0.3s ease-in-out; /* Smooth transition */
+  
+}
+
+.swipe-dot.active {
+  background-color: rgb(255, 255, 255); /* Color when active */
+}
+
+.dropdown {
+  position: relative;
+  top: -50px; /* Adjust the top distance as needed */
+  left: -100px;
+  border-style: none;
+  background: #414549;
+  z-index: 1;
+  background-color: transparent;
+}
+
+
+
+.dropdown-title {
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+ 
+  color: #000000;
+  background-color: transparent;
+}
+
+.dropdown-section {
+  padding: 10px;
+  cursor: pointer;
+
+  color: #eaeaea;
+}
+
+/* Highlight the section on hover */
+.dropdown-section:hover {
+  background-color: #666666;
+  color: #ffffff;
+}
+
+/* Remove border from the last section */
+.dropdown-section:last-child {
+  border-bottom: none;
+}
+
+  </style>
+</head>
+<body>
+  <div class="dropdown" id="dropdown">
+    <div class="dropdown-title">Corpmobile Simulator 1.0 Admin</div>
+    <div class="dropdown-section">Simulator Navigation</div>
+    <div class="dropdown-section">Comparison to Prototype</div>
+    <div class="dropdown-section">What's in the Works</div>
+    <div class="dropdown-section">Key Features</div>
+    <div class="dropdown-section">Failure/Error Scenarios</div>
+    <div class="dropdown-section">Making Changes</div>
+    <div class="dropdown-section">Send Feedback</div>
+  </div>
+  <div class="iphone">
+    <div class="iphone-header normal-content">
+        <div class="iphone-status ">
+            <span class="time" id="clock">00:00</span> <!-- Time -->
+            <span class="status-icon"><i class="fas fa-signal"></i></span> <!-- Cellular icon -->
+            <span class="status-icon"><i class="fas fa-wifi"></i></span> <!-- Wi-Fi icon -->
+            <span class="status-icon"><i class="fas fa-battery-full"></i></span> <!-- Battery icon -->
+          </div>
+        <div class="iphone-camera"></div></div>
+    
+    <div class="iphone-screen normal-content"  >
+      <div class="iphone-icons container">
+   
+
+        <div class="page" >
+        <div class="app-icon">
+            <img src="iphonebackground.png" alt="">
+            <button  id=blank-button class="app-button"></button>
+            <p>App</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>App</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>App</p>
+          </div>
+        <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>App</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+        <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>App</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>App</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <!-- <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+            <p>app</p>
+          </div> -->
+        </div>
+
+        <div class="page" id="page2">
+          <div class="app-icon">
+              <img src="icon.png" alt="">
+              <button  id=blank-button class="app-button"></button>
+              <p>App</p>
+            </div>
+            <div class="app-icon">
+              <img src="icon.png" alt="">
+              <button class="app-button"></button>
+              <p>App</p>
+            </div>
+            <div class="app-icon">
+              <img src="icon.png" alt="">
+              <button class="app-button"></button>
+              <p>App</p>
+            </div>
+          <div class="app-icon">
+              <img src="icon.png" alt="">
+              <button class="app-button"></button>
+              <p>App</p>
+            </div>
+            <div class="app-icon">
+              <img src="icon.png" alt="">
+              <button class="app-button"></button>
+              <p>app</p>
+            </div>
+            <div class="app-icon">
+              <img src="icon.png" alt="">
+              <button class="app-button"></button>
+              <p>app</p>
+            </div>
+          <div class="app-icon">
+              <img src="icon.png" alt="">
+              <button class="app-button"></button>
+              <p>App</p>
+            </div>
+            <div class="app-icon">
+              <img src="icon.png" alt="">
+              <button class="app-button"></button>
+              <p>App</p>
+            </div>
+            <div class="app-icon">
+              <img src="icon.png" alt="">
+              <button class="app-button"></button>
+              <p>app</p>
+            </div>
+            <div class="app-icon">
+              <img src="icon.png" alt="">
+              <button class="app-button"></button>
+              <p>app</p>
+            </div>
+            <div class="app-icon">
+              <img src="icon.png" alt="">
+              <button class="app-button"></button>
+              <p>app</p>
+            </div>
+            <div class="app-icon">
+              <img src="icon.png" alt="">
+              <button class="app-button"></button>
+              <p>app</p>
+            </div>
+            <div class="app-icon">
+              <img src="icon.png" alt="">
+              <button class="app-button"></button>
+              <p>app</p>
+            </div>
+            <div class="app-icon">
+              <img src="icon.png" alt="">
+              <button class="app-button"></button>
+              <p>app</p>
+            </div>
+            <div class="app-icon">
+              <img src="icon.png" alt="">
+              <button class="app-button"></button>
+              <p>app</p>
+            </div>
+            <div class="app-icon">
+              <img src="icon.png" alt="">
+              <button class="app-button"></button>
+              <p>app</p>
+            </div>
+            <!-- <div class="app-icon">
+              <img src="icon.png" alt="">
+              <button class="app-button"></button>
+              <p>app</p>
+            </div>
+            <div class="app-icon">
+              <img src="icon.png" alt="">
+              <button class="app-button"></button>
+              <p>app</p>
+            </div>
+            <div class="app-icon">
+              <img src="icon.png" alt="">
+              <button class="app-button"></button>
+              <p>app</p>
+            </div>
+            <div class="app-icon">
+              <img src="icon.png" alt="">
+              <button class="app-button"></button>
+              <p>app</p>
+            </div> -->
+          </div>
+      </div>
+
+
+
+
+
+      <div class="empty-row">
+        <div class="iphone-search">Search
+          <div class="swipe-dots">
+            <div class="swipe-dot swipe-dot-1 active"></div>
+            <div class="swipe-dot swipe-dot-2"></div>
+          </div>
+        
+        </div>
+      </div>
+      <!-- Row of apps at the bottom -->
+
+      <div class="bottom-apps-wrapper normal-content">
+      <div class="bottom-apps normal-content">
+        <!-- Add app icons for the bottom row -->
+        <div class="app-icon">
+          <img src="icon.png" alt="">
+          <button class="app-button"></button>
+        </div>
+        <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+          </div>
+          <div class="app-icon">
+            <img src="icon.png" alt="">
+            <button class="app-button"></button>
+          </div>
+          <div class="app-icon">
+          <img src="icon.png" alt="">
+          <button class="app-button"></button>
+        </div>
+    </div>
+  </div>
+</div>
+
+    <div class="iphone-footer normal-content"></div>
+   
+  </div>
+<script>
+  function updateTime() {
+  const clock = document.getElementById('clock');
+  const now = new Date();
+  let hours = now.getHours();
+  const amPm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12 || 12; // Convert to 12-hour format
+  const minutes = now.getMinutes().toString().padStart(2, '0'); // Format minutes (two digits)
+  const timeString = `${hours}:${minutes} ${amPm}`;
+  clock.textContent = timeString; // Update the time in the clock element
+
+  // Update every second
+  setTimeout(updateTime, 1000);
+}
+
+// Call updateTime function to start updating the time
+updateTime();
+
+let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+
+    let currentPage = 1;
+    const container = document.querySelector('.container');
+    const iphoneScreen = document.querySelector('.iphone-screen');
+    
+    container.addEventListener('mousedown', startTouch);
+    container.addEventListener('touchstart', startTouch);
+    container.addEventListener('mouseup', endTouch);
+    container.addEventListener('touchend', endTouch);
+    
+    function startTouch(event) {
+      event.preventDefault();
+      startX = event.type === 'mousedown' ? event.clientX : event.touches[0].clientX;
+      container.style.transition = 'none';
+      container.addEventListener('mousemove', moveTouch);
+      container.addEventListener('touchmove', moveTouch);
+      isDragging = true;
+      isClick = true;
+
+    }
+    
+    // ...
+
+    function moveTouch(event) {
+  if (isDragging) {
+    event.preventDefault();
+    currentX = event.type === 'mousemove' ? event.clientX : event.touches[0].clientX;
+    const diff = startX - currentX;
+
+    const iphoneScreenWidth = iphoneScreen.offsetWidth;
+    const translation = (currentPage - 1) * iphoneScreenWidth + diff;
+
+    // Adjust the transition only for page 2
+    if (currentPage === 2) {
+      const adjustedTranslation = Math.min(iphoneScreenWidth * 0.91, Math.max(0, translation));
+      container.style.transform = `translateX(-${adjustedTranslation}px)`;
+    } else {
+      const translationInPixels = Math.min(iphoneScreenWidth, Math.max(0, translation));
+      container.style.transform = `translateX(-${Math.min(translationInPixels, 380)}px)`;
+    }
+  }
+}
+
+
+// ...
+
+
+    
+    // ... (previous code)
+    
+    // ... (previous code)
+    
+    // ... (previous code)
+    
+    function endTouch() {
+  container.style.transition = 'transform 0.3s ease-in-out';
+
+  const iphoneScreenWidth = iphoneScreen.offsetWidth;
+  const threshold = iphoneScreenWidth * 0.3;
+
+if(currentX !==0){
+  if (currentPage === 1 && startX - currentX > threshold) {
+    currentPage = 2;
+  } else if (currentPage === 2 && currentX - startX > threshold) {
+    currentPage = 1;
+  }
+}
+
+  const translation = (currentPage - 1) * iphoneScreenWidth;
+
+  // Adjust the final position only for page 2
+  if (currentPage === 2) {
+    const adjustedTranslation = translation * 0.925; // Adjust the factor as needed
+    container.style.transform = `translateX(-${adjustedTranslation}px)`;
+  } else {
+    container.style.transform = `translateX(-${translation}px)`;
+  }
+
+  isDragging = false;
+  isClick = false;
+  container.removeEventListener('mousemove', moveTouch);
+  container.removeEventListener('touchmove', moveTouch);
+}
+
+
+// ... (remaining code)
+
+
+// ... (remaining code)
+
+
+// ... (remaining code)
+// Add this variable at the beginning of your script
+
+
+let isMouseDown = false;
+let dotTimeout;
+
+document.addEventListener('mousedown', handleMouseDown);
+document.addEventListener('mouseup', handleMouseUp);
+
+function handleMouseDown() {
+  isMouseDown = true;
+  updateSearchVisibility();
+}
+
+function handleMouseUp() {
+  isMouseDown = false;
+  updateSearchVisibility();
+}
+
+function updateSearchVisibility() {
+  const searchElement = document.querySelector('.iphone-search');
+  const dotsElement = document.querySelector('.swipe-dots');
+
+  if (isMouseDown) {
+    // Hide the search text and show the dots
+    searchElement.style.visibility = 'hidden';
+    dotsElement.style.visibility = 'visible';
+  } else {
+    // Clear existing timeout
+    clearTimeout(dotTimeout);
+
+    // Set a timeout to hide dots after 3 seconds
+    dotTimeout = setTimeout(() => {
+      searchElement.style.visibility = 'visible';
+      dotsElement.style.visibility = 'hidden';
+    }, 3000);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const container = document.querySelector('.container');
+  const swipeDot1 = document.querySelector('.swipe-dot-1');
+  const swipeDot2 = document.querySelector('.swipe-dot-2');
+
+  container.addEventListener('transitionend', function () {
+    // Get the current translation value
+    const transformValue = getComputedStyle(container).getPropertyValue('transform');
+    const translation = parseInt(transformValue.split(',')[4]) || 0;
+
+    // Determine the active dot based on translation
+    if (translation === 0) {
+      // Page 1 is active
+      swipeDot1.classList.add('active');
+      swipeDot2.classList.remove('active');
+    } else {
+      // Page 2 is active
+      swipeDot1.classList.remove('active');
+      swipeDot2.classList.add('active');
+    }
+  });
+});
+
+
+const iphoneScreeen = document.querySelector('.iphone-screen');
+
+iphoneScreen.addEventListener('mouseleave', handleMouseLeaveOnScreen);
+
+function handleMouseLeaveOnScreen() {
+    if (isDragging) {
+        endTouch();
+    }
+}
+
+// const dropdown = document.getElementById('dropdown');
+
+// // Show dropdown on click
+// document.addEventListener('click', function (event) {
+//   if (event.target.classList.contains('dropdown-title')) {
+//     dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+//   } else {
+//     dropdown.style.display = 'none';
+//   }
+// });
+
+
+
+
+</script>
+  
+</body>
+
+
+
+</html>
+
+
+
+<!-- 
+let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+    let currentPage = 1;
+    const container = document.querySelector('.container');
+
+    container.addEventListener('mousedown', startTouch);
+    container.addEventListener('touchstart', startTouch);
+    container.addEventListener('mouseup', endTouch);
+    container.addEventListener('touchend', endTouch);
+
+    function startTouch(event) {
+      event.preventDefault();
+      startX = event.type === 'mousedown' ? event.clientX : event.touches[0].clientX;
+      container.style.transition = 'none';
+      container.addEventListener('mousemove', moveTouch);
+      container.addEventListener('touchmove', moveTouch);
+      isDragging = true;
+    }
+
+    function moveTouch(event) {
+      if (isDragging) {
+        event.preventDefault();
+        currentX = event.type === 'mousemove' ? event.clientX : event.touches[0].clientX;
+        const diff = startX - currentX;
+        const dragPercentage = (diff / window.innerWidth) * 100;
+        if (currentPage === 1) {
+          if (diff > 0) {
+            container.style.transform = `translateX(-${Math.min(100,Math.abs(dragPercentage))}vw)`;
+          }
+          if (dragPercentage >= 15) {
+            container.style.transition = 'transform 0.3s ease-in-out';
+            container.style.transform = 'translateX(-100vw)';
+            currentPage = 2;
+            isDragging = false;
+          }
+        } else if (currentPage === 2) {
+          if (diff < 0) {
+            container.style.transform = `translateX(-${100 - Math.min(100, Math.abs(dragPercentage))}vw)`;
+          }
+          if (Math.abs(dragPercentage) >= 15) {
+            container.style.transition = 'transform 0.3s ease-in-out';
+            container.style.transform = 'translateX(0)';
+            currentPage = 1;
+            isDragging = false;
+          }
+        }
+      }
+    }
+
+    function endTouch() {
+      if (isDragging) {
+        container.style.transition = 'transform 0.3s ease-in-out';
+        container.style.transform = currentPage === 1 ? 'translateX(0)' : 'translateX(-100vw)';
+        isDragging = false;
+        container.removeEventListener('mousemove', moveTouch);
+        container.removeEventListener('touchmove', moveTouch);
+      }
+    } -->
+
+
+
+
+    <!-- function updateTime() {
+      const clock = document.getElementById('clock');
+      const now = new Date();
+      let hours = now.getHours();
+      const amPm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12 || 12; // Convert to 12-hour format
+      const minutes = now.getMinutes().toString().padStart(2, '0'); // Format minutes (two digits)
+      const timeString = `${hours}:${minutes} ${amPm}`;
+      clock.textContent = timeString; // Update the time in the clock element
+    
+      // Update every second
+      setTimeout(updateTime, 1000);
+    }
+    
+    // Call updateTime function to start updating the time
+    updateTime();
+    
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+    let currentPage = 1;
+    const container = document.querySelector('.container');
+    const iphoneScreen = document.querySelector('.iphone-screen');
+    
+    container.addEventListener('mousedown', startTouch);
+    container.addEventListener('touchstart', startTouch);
+    container.addEventListener('mouseup', endTouch);
+    container.addEventListener('touchend', endTouch);
+    
+    function startTouch(event) {
+      event.preventDefault();
+      startX = event.type === 'mousedown' ? event.clientX : event.touches[0].clientX;
+      container.style.transition = 'none';
+      container.addEventListener('mousemove', moveTouch);
+      container.addEventListener('touchmove', moveTouch);
+      isDragging = true;
+    }
+    
+    function moveTouch(event) {
+      if (isDragging) {
+        event.preventDefault();
+        currentX = event.type === 'mousemove' ? event.clientX : event.touches[0].clientX;
+        const diff = startX - currentX;
+    
+        const iphoneScreenWidth = iphoneScreen.offsetWidth;
+        const translation = (currentPage - 1) * iphoneScreenWidth + diff;
+        const translationInPixels = Math.min(iphoneScreenWidth, Math.max(0, translation));
+        container.style.transform = `translateX(-${Math.min(translationInPixels, 380)}px)`;
+      }
+    }
+    
+    // ... (previous code)
+    
+    // ... (previous code)
+    
+    // ... (previous code)
+    
+    function endTouch() {
+      container.style.transition = 'transform 0.3s ease-in-out';
+    
+      const iphoneScreenWidth = iphoneScreen.offsetWidth;
+      const threshold = iphoneScreenWidth * 0.3;
+    
+      if (currentPage === 1 && startX - currentX > threshold) {
+        currentPage = 2;
+      } else if (currentPage === 2 && currentX - startX > threshold) {
+        currentPage = 1;
+      }
+    
+      const translation = (currentPage - 1) * iphoneScreenWidth;
+      container.style.transform = `translateX(-${translation}px)`;
+    
+      isDragging = false;
+      container.removeEventListener('mousemove', moveTouch);
+      container.removeEventListener('touchmove', moveTouch);
+    } -->
