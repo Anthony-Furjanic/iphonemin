@@ -122,3 +122,230 @@ function sendEmail() {
 }
 
 
+
+
+
+MENU ADD AND HOME BUTTON BAR ADD
+
+
+
+#swipeUpBar {
+  position: relative;
+  width: 30%;
+  height: 4px; /* Adjust the height as needed */
+  background-color: rgb(161, 156, 156);
+  border-top: 1px solid #ccc; /* Optional: Add a border for separation */
+  cursor: pointer;
+ border-radius: 60px;
+ align-self: center;
+ margin-bottom: 50px;
+ margin-top: -5px;
+ margin-left: 80px;
+}
+
+/* Add a swipe-up animation if desired */
+#swipeUpBar:hover {
+  background-color: #ebebeb; /* Change color on hover */
+}
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    color: #eaeaea;
+    background-color: #000;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Updated to space between items */
+    padding: 0 15px; /* Add padding to create space around the button */
+}
+
+.header-title {
+    /* Add these styles to center the title */
+    text-align: center;
+    flex-grow: 1;
+    font-size: 25px;
+}
+
+.menu-btn {
+    font-size: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #fff;
+}
+.nav-menu {
+    position: absolute;
+    top: 50px; /* Adjust the top position to match the height of your header */
+    left: 0;
+    width: 15%;
+    background-color: #333;
+    /* padding: 10px; */
+    transition: top 0.3s ease; /* Add transition for smooth animation */
+    display: none; /* Hide the menu by default */ 
+    background-color: transparent;
+    /* border: 3px solid grey; */
+    
+}
+   
+
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+
+    margin: 0;
+}
+
+
+
+
+a{
+    color: #818286;
+    text-decoration: none;
+}
+.nav-menu ul li {
+    border-top: 1px solid rgb(191, 191, 191);
+    border-bottom: 1px solid rgb(173, 173, 173);
+    height: 35px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Ensure the anchor takes the full height of the list item */
+    text-decoration: none;
+
+}
+.nav-menu li a:hover{
+    background-color: #666666;
+  color: #ffffff;
+}
+  </style>
+</head>
+<body>
+    <header>
+        <button class="menu-btn">☰</button>
+        <div class="header-title">Corpmobile Simulator 1.0 Admin</div>
+        
+        <!-- Other header content or navigation goes here -->
+    </header>
+    <div class="nav-menu">
+        <ul>
+            <li><a href="#">Menu Item 1</a></li>
+            <li><a href="#">Menu Item 2</a></li>
+            <li><a href="#">Menu Item 3</a></li>
+            <!-- Add more menu items as needed -->
+        </ul>
+    </div>
+
+
+
+function goBackToHome() {
+    window.location.href="https://www.google.com/"
+}
+
+
+document.addEventListener('DOMContentLoaded', function () {
+            const menuBtn = document.querySelector('.menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+
+            menuBtn.addEventListener('click', function () {
+                navMenu.style.display = (navMenu.style.display === 'block') ? 'none' : 'block';
+            });
+        });
+
+
+
+
+DRAGGABLE PAGE
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Draggable Circle</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border: 2px solid #333;
+      overflow: hidden; /* Ensure circle stays within container */
+    }
+
+    .draggable-circle {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #3498db;
+      border-radius: 50%;
+      cursor: grab;
+      user-select: none;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+      left: calc(100% - 50px); /* Touch the right side */
+      top: calc(100% - 50px - 10px); /* 10px from the bottom edge */
+    }
+  </style>
+</head>
+<body>
+
+<div id="container">
+  <div id="circle" class="draggable-circle"></div>
+</div>
+
+<script>
+  const circle = document.getElementById('circle');
+  let offsetX, offsetY, isDragging = false;
+
+  circle.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    offsetX = e.clientX - circle.getBoundingClientRect().left;
+    offsetY = e.clientY - circle.getBoundingClientRect().top;
+    circle.style.cursor = 'grabbing';
+    circle.style.opacity = 1; // Make circle fully opaque while dragging
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+      const containerRect = document.getElementById('container').getBoundingClientRect();
+      const x = e.clientX - offsetX - containerRect.left;
+      const y = e.clientY - offsetY - containerRect.top;
+
+      // Ensure circle stays within container
+      const maxX = containerRect.width - circle.offsetWidth; // Adjusted to allow touching the right side
+      const maxY = containerRect.height - circle.offsetHeight - 10; // 10px from the bottom edge
+
+      circle.style.left = `${Math.min(Math.max(x, 0), maxX)}px`;
+      circle.style.top = `${Math.min(Math.max(y, 0), maxY)}px`;
+    }
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (isDragging) {
+      isDragging = false;
+      circle.style.cursor = 'grab';
+      circle.style.opacity = 0.8; // Return opacity to initial value when not dragging
+    }
+  });
+</script>
+
+</body>
+</html>
+
+
+
