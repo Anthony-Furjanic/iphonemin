@@ -126,7 +126,8 @@ function sendEmail() {
 
 
 MENU ADD AND HOME BUTTON BAR ADD
-
+ <div id="swipeUpBar" onclick="goBackToHome()"></div>
+</div>
 
 
 #swipeUpBar {
