@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 600px; /* Fixed width for the outer container */
+      background-color: #333;
+      box-sizing: border-box;
+    }
+
+    .header {
+      height: 20px;
+      background-color: #555;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .main-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .top-half {
+      flex-grow: 3; /* Adjusted to 60% of the container */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      border-bottom: 5px solid blue;
+    }
+
+    .small-rectangle {
+      width: 20px;
+      height: 80px;
+      background-color: #888;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: -1px;
+    }
+
+    .checkmark {
+      color: #fff;
+      font-size: 36px;
+    }
+
+    .heading {
+      margin: 0;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .small-heading {
+      margin: 0;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .bottom-half {
+      flex-grow: 2; /* Adjusted to 40% of the container */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .bar {
+      width: calc(100% - 2px);
+      height: 20px;
+      background-color: #ccc;
+      margin-bottom: -1px;
+      border-bottom: 1px solid blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">Your Original Header</div>
+    <div class="main-container">
+      <div class="top-half">
+        <div class="small-rectangle">
+          <div class="checkmark">✔</div>
+        </div>
+        <div class="heading">Regular Heading</div>
+        <div class="small-heading">Smaller Heading</div>
+      </div>
+      <div class="bottom-half">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <!-- Add your content for the bottom half of the main container here -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>
