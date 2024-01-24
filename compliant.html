@@ -395,3 +395,102 @@
 
 </body>
 </html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clickable and Draggable Circle</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border: 2px solid #333;
+      overflow: hidden; /* Ensure circle stays within container */
+    }
+
+    .draggable-circle {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #3498db;
+      border-radius: 50%;
+      cursor: grab;
+      user-select: none;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+      left: calc(100% - 50px - 10px); /* 10px from the left edge */
+      top: calc(100% - 50px - 10px); /* 10px from the bottom edge */
+    }
+  </style>
+</head>
+<body>
+
+<div id="container">
+  <a id="link" href="your_destination_page.html">
+    <div id="circle" class="draggable-circle"></div>
+  </a>
+</div>
+
+<script>
+  const circle = document.getElementById('circle');
+  const link = document.getElementById('link');
+  let offsetX, offsetY, initialX, initialY, isDragging = false;
+  let isClick = true;
+
+  circle.addEventListener('mousedown', (e) => {
+    isClick = true;
+    initialX = e.clientX;
+    initialY = e.clientY;
+    offsetX = circle.getBoundingClientRect().left - initialX;
+    offsetY = circle.getBoundingClientRect().top - initialY;
+    circle.style.cursor = 'grabbing';
+    circle.style.opacity = 1; // Make circle fully opaque while dragging
+    e.preventDefault(); // Prevent dragging the link
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+      const x = e.clientX + offsetX;
+      const y = e.clientY + offsetY;
+
+      // Ensure circle stays within container
+      const maxX = document.getElementById('container').clientWidth - circle.offsetWidth;
+      const maxY = document.getElementById('container').clientHeight - circle.offsetHeight;
+
+      circle.style.left = `${Math.min(Math.max(x, 0), maxX)}px`;
+      circle.style.top = `${Math.min(Math.max(y, 0), maxY)}px`;
+    }
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (isDragging) {
+      isDragging = false;
+      circle.style.cursor = 'grab';
+      circle.style.opacity = 0.8; // Return opacity to initial value when not dragging
+    } else if (isClick) {
+      // If it was a single click, navigate to the destination page
+      window.location.href = link.href;
+    }
+  });
+
+  circle.addEventListener('click', () => {
+    isClick = false;
+  });
+</script>
+
+</body>
+</html>
