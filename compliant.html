@@ -109,5 +109,97 @@
   </div>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clickable and Draggable Circle</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
 
+    #container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border: 2px solid #333;
+      overflow: hidden; /* Ensure circle stays within container */
+    }
+
+    .draggable-circle {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #3498db;
+      border-radius: 50%;
+      cursor: grab;
+      user-select: none;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+      left: calc(100% - 50px - 10px); /* 10px from the left edge */
+      top: calc(100% - 50px - 10px); /* 10px from the bottom edge */
+    }
+  </style>
+</head>
+<body>
+
+<div id="container">
+  <a id="link" href="your_destination_page.html">
+    <div id="circle" class="draggable-circle"></div>
+  </a>
+</div>
+
+<script>
+  const circle = document.getElementById('circle');
+  const link = document.getElementById('link');
+  let offsetX, offsetY, isDragging = false;
+  let clickTimer;
+
+  circle.addEventListener('mousedown', (e) => {
+    // Set a timer to distinguish between a single click and a click-and-hold
+    clickTimer = setTimeout(() => {
+      isDragging = true;
+      offsetX = e.clientX - circle.getBoundingClientRect().left;
+      offsetY = e.clientY - circle.getBoundingClientRect().top;
+      circle.style.cursor = 'grabbing';
+      circle.style.opacity = 1; // Make circle fully opaque while dragging
+    }, 200); // You can adjust the time threshold here
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+      const containerRect = document.getElementById('container').getBoundingClientRect();
+      const x = e.clientX - offsetX - containerRect.left;
+      const y = e.clientY - offsetY - containerRect.top;
+
+      // Ensure circle stays within container
+      const maxX = containerRect.width - circle.offsetWidth;
+      const maxY = containerRect.height - circle.offsetHeight - 10; // 10px from the bottom edge
+
+      circle.style.left = `${Math.min(Math.max(x, 0), maxX)}px`;
+      circle.style.top = `${Math.min(Math.max(y, 0), maxY)}px`;
+    }
+  });
+
+  document.addEventListener('mouseup', () => {
+    clearTimeout(clickTimer); // Clear the timer on mouseup
+    if (isDragging) {
+      isDragging = false;
+      circle.style.cursor = 'grab';
+      circle.style.opacity = 0.8; // Return opacity to initial value when not dragging
+    } else {
+      // If it was a single click, navigate to the destination page
+      window.location.href = link.href;
+    }
+  });
+</script>
+
+</body>
+</html>
 
