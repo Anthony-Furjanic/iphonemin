@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title >Under C⚙️nstruction</title>
+  <style>
+    body {
+        font-family: 'Stencil', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    .construction-container {
+      text-align: center;
+    }
+
+    .construction-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .construction-text {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .construction-cog {
+      display: inline-block;
+      font-size: 40px;
+      animation: spin 4s linear infinite;
+    }
+
+  
+
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+  
+  
+
+
+  </style>
+</head>
+<body>
+
+<div class="construction-container">
+  <div class="construction-icon">&#x1F6A7;</div>
+  <div class="construction-text" style="font-size:50px;"> <span class="falling-c">P</span>age Under C<span class="construction-cog">⚙️</span>nstruction</div>
+ 
+</div>
+
+</body>
+</html>
