@@ -65,8 +65,7 @@
 
   circle.addEventListener('click', (e) => {
     if (!isLongPress) {
-      // If it was not a long press, trigger the click event
-      alert('Circle clicked!'); // Replace with your desired onclick functionality
+     window.location.href="https://www.geeksforgeeks.org/underline-hover-animation-effect-using-tailwind-css/"
     }
   });
 
@@ -79,7 +78,7 @@
 
       // Ensure circle stays within container
       const maxX = containerRect.width - circle.offsetWidth - 5; // Adjusted to allow touching the right side
-      const maxY = containerRect.height - circle.offsetHeight - 5; // 10px from the bottom edge
+      const maxY = containerRect.height - circle.offsetHeight - 7; // 10px from the bottom edge
 
       circle.style.left = `${Math.min(Math.max(x, 0), maxX)}px`;
       circle.style.top = `${Math.min(Math.max(y, 0), maxY)}px`;
