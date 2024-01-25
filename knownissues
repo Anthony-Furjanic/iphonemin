@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Known Issues - Your Application Name</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+
+        h1, h2, h3 {
+            color: #444445;
+        }
+
+        h2 {
+            border-bottom: 2px solid #adadad;
+            padding-bottom: 5px;
+            margin-top: 20px;
+            position: relative; /* Added relative positioning */
+        }
+
+        h2::after {
+            content: '+';
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+        }
+
+        h2.active::after {
+            content: '-'; /* Change to minus sign when active */
+        }
+
+        h3 {
+            margin-top: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .faq-section, .contact-section {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            color: #6c757d;
+        }
+
+        .collapsible {
+            cursor: pointer;
+            user-select: none;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            display: none;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Known Issues</h1>
+
+<p>Welcome to the Known Issues page for <em>Your Application Name</em>. This section is dedicated to documenting known problems and providing information on any workarounds or solutions. Our team is actively working to address these issues, and we appreciate your understanding and patience.</p>
+
+<h2 class="collapsible">Current Issues</h2>
+<div class="content faq-section">
+    <h3>1. [Issue Title 1]</h3>
+    <ul>
+        <li><strong>Description:</strong> Brief description of the issue.</li>
+        <li><strong>Status:</strong> [In Progress / Investigating / Resolved / Workaround Available]</li>
+        <li><strong>Workaround:</strong> [Provide any workaround if available]</li>
+        <li><strong>Estimated Resolution Date:</strong> [Provide if available]</li>
+    </ul>
+
+    <h3>2. [Issue Title 2]</h3>
+    <ul>
+        <li><strong>Description:</strong> Brief description of the issue.</li>
+        <li><strong>Status:</strong> [In Progress / Investigating / Resolved / Workaround Available]</li>
+        <li><strong>Workaround:</strong> [Provide any workaround if available]</li>
+        <li><strong>Estimated Resolution Date:</strong> [Provide if available]</li>
+    </ul>
+</div>
+
+<h2 class="collapsible">Reporting New Issues</h2>
+<div class="content contact-section">
+    <p>If you encounter an issue that is not listed here, please report it to our support team. Your feedback is invaluable, and it helps us improve the quality of our application.</p>
+    <p><a href="mailto:support@example.com">Contact Support</a></p>
+</div>
+
+<h2 class="collapsible">Frequently Asked Questions</h2>
+<div class="content faq-section">
+    <h3>1. How can I stay updated on issue resolutions?</h3>
+    <p>We regularly update this page with the latest information on known issues and their resolutions. You can also follow us on <a href="[social_media_link]">social media</a> for real-time updates.</p>
+
+    <h3>2. Is there a status page for system-wide outages?</h3>
+    <p>Yes, we maintain a status page where you can check the overall health of our services. Visit <a href="https://status.example.com">Status Page</a> for more information.</p>
+</div>
+
+<h2 class="collapsible">Contact Us</h2>
+<div class="content contact-section">
+    <p>If you have any questions or need further assistance, please feel free to reach out to our support team.</p>
+    <p><a href="mailto:support@example.com">Contact Support</a></p>
+</div>
+
+<footer>
+    <p>Thank you for your understanding and cooperation. &copy; Your Company Name | [Date]</p>
+</footer>
+
+<script>
+    document.querySelectorAll('.collapsible').forEach(item => {
+        item.addEventListener('click', function () {
+            this.classList.toggle('active');
+            const content = this.nextElementSibling;
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
