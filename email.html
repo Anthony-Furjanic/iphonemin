@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        
+/* Resetting some styles for better clarity */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Hide both horizontal and vertical scrollbars */
+}
+
+
+/* Styles for the inbox items */
+.email {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+}
+
+.email-left {
+    margin-right: 15px;
+}
+
+.email-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.email-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.email-sender {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.email-subject {
+    font-size: 14px;
+}
+
+.email-preview {
+    font-size: 12px;
+    color: #555;
+}
+
+.email-timestamp {
+    margin-left: auto;
+    margin-right: 0; /* Adjust margin-right to 0 */
+    font-size: 12px;
+    color: #888;
+    align-self: flex-start;
+}
+
+/* Your existing styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.phone-container {
+    width: 350px;
+    height: 650px;
+    background-color: #333;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    
+}
+
+
+header {
+    background-color: #000;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 20px;
+    position: relative;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header-images {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header-image {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    border-radius: 50%;
+}
+
+.inbox-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.message {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.sender {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.email-timestamp {
+    position: relative;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    color: #888;
+    transform: translateY(-55px);
+}
+
+.subject {
+    margin-top: 5px;
+}
+
+.body {
+    margin-top: 5px;
+    color: #333;
+}
+
+.search-bar {
+    width: calc(100% - 40px);
+    margin: 10px 20px;
+    display: flex;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="text"]::placeholder {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+}
+
+
+    </style>
+    <title>Simulated Inbox</title>
+</head>
+<body>
+
+    <div class="phone-container">
+        <header>
+            <i class="menu-icon fas fa-bars"></i>
+            <div style="flex: 1;"></div>
+            Inbox
+            <div class="header-images">
+                <img class="header-image" src="placeholder1.jpg" alt="Image 1">
+                <img class="header-image" src="placeholder2.jpg" alt="Image 2">
+            </div>
+        </header>
+
+        <div class="search-bar">
+            <input type="text" placeholder="&#128269;&#xFE0E; Search">
+        </div>
+
+        <div class="inbox-container">
+                <div class="email">
+                    <div class="email-left">
+                        <img class="email-image" src="placeholder_email.jpg" alt="Sender Image">
+                    </div>
+                    <div class="email-content">
+                        <div class="email-sender">John Doe</div>
+                        <div class="email-subject">Meeting Tomorrow</div>
+                        <div class="email-preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+                        <div class="email-timestamp">00:00</div>
+                    </div>
+                </div>
+                <div class="email">
+                    <div class="email-left">
+                        <img class="email-image" src="placeholder_email.jpg" alt="Sender Image">
+                    </div>
+                    <div class="email-content">
+                        <div class="email-sender">John Doe</div>
+                        <div class="email-subject">Meeting Tomorrow</div>
+                        <div class="email-preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+                        <div class="email-timestamp">00:00</div>
+                    </div>
+                </div>
+            
+                <div class="email">
+                    <div class="email-left">
+                        <img class="email-image" src="placeholder_email.jpg" alt="Sender Image">
+                    </div>
+                    <div class="email-content">
+                        <div class="email-sender">Jane Smith</div>
+                        <div class="email-subject">Project Update</div>
+                        <div class="email-preview">Hi, just wanted to provide an update on the project...</div>
+                        <div class="email-timestamp">00:00</div>
+                    </div>
+                </div>
+
+                <div class="email">
+                    <div class="email-left">
+                        <img class="email-image" src="placeholder_email.jpg" alt="Sender Image">
+                    </div>
+                    <div class="email-content">
+                        <div class="email-sender">John Doe</div>
+                        <div class="email-subject">Meeting Tomorrow</div>
+                        <div class="email-preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+                        <div class="email-timestamp">00:00</div>
+                    </div>
+                </div>
+            
+                <div class="email">
+                    <div class="email-left">
+                        <img class="email-image" src="placeholder_email.jpg" alt="Sender Image">
+                    </div>
+                    <div class="email-content">
+                        <div class="email-sender">Jane Smith</div>
+                        <div class="email-subject">Project Update</div>
+                        <div class="email-preview">Hi, just wanted to provide an update on the project...</div>
+                        <div class="email-timestamp">00:00</div>
+                    </div>
+                </div>
+
+                <div class="email">
+                    <div class="email-left">
+                        <img class="email-image" src="placeholder_email.jpg" alt="Sender Image">
+                    </div>
+                    <div class="email-content">
+                        <div class="email-sender">John Doe</div>
+                        <div class="email-subject">Meeting Tomorrow</div>
+                        <div class="email-preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+                        <div class="email-timestamp">00:00</div>
+                    </div>
+                </div>
+            
+                <div class="email">
+                    <div class="email-left">
+                        <img class="email-image" src="placeholder_email.jpg" alt="Sender Image">
+                    </div>
+                    <div class="email-content">
+                        <div class="email-sender">Jane Smith</div>
+                        <div class="email-subject">Project Update</div>
+                        <div class="email-preview">Hi, just wanted to provide an update on the project...</div>
+                        <div class="email-timestamp">00:00</div>
+                    </div>
+                </div>
+
+                <div class="email">
+                    <div class="email-left">
+                        <img class="email-image" src="placeholder_email.jpg" alt="Sender Image">
+                    </div>
+                    <div class="email-content">
+                        <div class="email-sender">John Doe</div>
+                        <div class="email-subject">Meeting Tomorrow</div>
+                        <div class="email-preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+                        <div class="email-timestamp">00:00</div>
+                    </div>
+                </div>
+            
+                <div class="email">
+                    <div class="email-left">
+                        <img class="email-image" src="placeholder_email.jpg" alt="Sender Image">
+                    </div>
+                    <div class="email-content">
+                        <div class="email-sender">Jane Smith</div>
+                        <div class="email-subject">Project Update</div>
+                        <div class="email-preview">Hi, just wanted to provide an update on the project...</div>
+                        <div class="email-timestamp">00:00</div>
+                    </div>
+                </div>
+            
+                <!-- Repeat the above structure for the remaining 9 emails -->
+            
+            </div>
+            <!-- Messages go here -->
+        </div>
+    </div>
+
+
+</body>
+</html>
