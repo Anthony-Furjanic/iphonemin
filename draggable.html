@@ -155,3 +155,13 @@ window.addEventListener('beforeunload', () => {
   document.removeEventListener('mousemove', handleMouseMove);
   document.removeEventListener('mouseup', handleMouseUp);
 });
+
+
+window.onload = function() {
+  if (window.history && window.history.pushState) {
+    window.history.pushState('no-cache', document.title, window.location.href);
+    window.addEventListener('popstate', function() {
+      location.reload();
+    });
+  }
+};
