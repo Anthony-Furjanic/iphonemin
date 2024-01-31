@@ -165,3 +165,55 @@ window.onload = function() {
     });
   }
 };
+
+
+
+
+const circle = document.getElementById('circle');
+let offsetX, offsetY, isDragging = false, isLongPress = false;
+
+circle.addEventListener('mousedown', (e) => {
+  isDragging = false;
+  isLongPress = false;
+
+  // Set a timeout for 500 milliseconds
+  setTimeout(() => {
+    isLongPress = true;
+    isDragging = true; // To prevent click event
+  }, 100);
+
+  offsetX = e.clientX - circle.getBoundingClientRect().left;
+  offsetY = e.clientY - circle.getBoundingClientRect().top;
+  circle.style.cursor = 'grabbing';
+  circle.style.opacity = 1; // Make circle fully opaque while dragging
+});
+
+circle.addEventListener('click', (e) => {
+  if (!isLongPress) {
+    window.location.href = "https://www.geeksforgeeks.org/underline-hover-animation-effect-using-tailwind-css/"
+  }
+});
+
+document.addEventListener('mousemove', (e) => {
+  if (isDragging) {
+    const containerRect = document.getElementById('container').getBoundingClientRect();
+    const x = e.clientX - offsetX - containerRect.left;
+    const y = e.clientY - offsetY - containerRect.top;
+
+    // Ensure circle stays within container
+    const maxX = containerRect.width - circle.offsetWidth - 5; // Adjusted to allow touching the right side
+    const maxY = containerRect.height - circle.offsetHeight - 7; // 10px from the bottom edge
+
+    circle.style.left = `${Math.min(Math.max(x, 0), maxX)}px`;
+    circle.style.top = `${Math.min(Math.max(y, 0), maxY)}px`;
+  }
+});
+
+document.addEventListener('mouseup', () => {
+  if (isDragging) {
+    isDragging = false;
+    circle.style.cursor = 'grab';
+    circle.style.opacity = 0.8; // Return opacity to initial value when not dragging
+  }
+});
+
