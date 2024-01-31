@@ -217,3 +217,27 @@ document.addEventListener('mouseup', () => {
   }
 });
 
+
+
+
+
+
+document.addEventListener('mousemove', (e) => {
+  if (isDragging) {
+    const containerRect = document.getElementById('container').getBoundingClientRect();
+    const x = e.clientX - offsetX;
+    const y = e.clientY - offsetY;
+
+    // Ensure circle stays within container
+    const maxX = containerRect.width - circle.offsetWidth - 5;
+    const maxY = containerRect.height - circle.offsetHeight - 7;
+    
+    // Calculate the container's offset from the viewport
+    const containerX = containerRect.left + window.scrollX;
+    const containerY = containerRect.top + window.scrollY;
+
+    // Update circle position, taking container offset into account
+    circle.style.left = `${Math.min(Math.max(x - containerX, 0), maxX)}px`;
+    circle.style.top = `${Math.min(Math.max(y - containerY, 0), maxY)}px`;
+  }
+});
