@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Expandable Carousel</title>
+    <style>
+      header {
+    text-align: center;
+    padding: 20px; /* Add some padding for spacing */
+}
+
+h1 {
+    margin: 0; /* Remove default margin for h1 */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    overflow: visible;
+    background-color: #f8f8f8;
+}
+        .carousel-container {
+            overflow: scroll;
+            height: 150%;
+            position: relative;
+            scroll-snap-type: y mandatory;
+            /* scroll-margin-top: 30%; Adjusted scroll-margin-top to match the height of the slides */
+   
+            overflow-x: hidden;
+            top: 50px;
+        }
+
+        .carousel-container::-webkit-scrollbar {
+            /* width: 10px;
+            height: 20px; */
+            background-color: transparent;
+        }
+
+        .carousel-container::-webkit-scrollbar-thumb {
+            /* background-color: #888888; Color similar to the background */
+            /* border-radius: 10px;
+            width:2px; */
+        
+            background-color: transparent;
+        }
+
+        .carousel-container::-webkit-scrollbar-track {
+            /* background-color: rgb(220, 220, 220); Color similar to the background */
+            background-color: transparent;
+        }
+        .carousel-container::-webkit-scrollbarx{
+            background-color: transparent;
+        }
+
+        .carousel {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+        }
+
+        .slide {
+            width: 700px;
+            height: 400px; /* Size of each slide *
+            background-color: #f0f0f0;
+            margin-bottom: 20px; /* Adjusted space between slides */
+            cursor: pointer;
+            position: relative;
+            display: inline-block;
+            transition: width .5s ease-in-out; /* Updated transition property */
+            overflow: hidden;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(50px); /* Apply blur effect to the background image */
+        }
+
+        .pre-expansion-text,
+        .slide-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff; /* Text color */
+            z-index: 2;
+            transition: opacity 0.5s ease-in-out; /* Include opacity in the transition */
+            transition-delay: 0.5s; /* Delay the opacity transition */
+        }
+
+        .pre-expansion-text {
+            display: block; /* Make sure it's visible */
+        }
+
+        .slide-content {
+            opacity: 0; /* Start with 0 opacity to hide content */
+            visibility: hidden; /* Hide content */
+            transition: opacity .5s ease-in-out; /* Include opacity in the transition */
+        }
+
+        .slide.active {
+            width: 800px; /* Expanded width */
+            height: 500px;
+        }
+
+        .slide.active .pre-expansion-text {
+            display: none;
+        }
+
+        .slide.active .slide-content {
+            opacity: 1; /* Make the content fully visible */
+            visibility: visible; /* Show content */
+        }
+        .slide.active img {
+            filter: blur(0); /* Remove blur effect when slide is expanded */
+        }
+
+        .user-select-none {
+            user-select: none;
+        }
+    
+    </style>
+</head>
+<body>
+    <header><h1>What we got cookin</h1></header>
+    <div class="carousel-container" id="carousel-container">
+     
+        <div class="carousel" id="carousel">
+            <!-- Add more slides as needed -->
+            <div class="slide user-select-none" onclick="toggleSlide(1)">
+                <img src="ProfilePhoto.png" alt="Blurred Background">
+                <div class="pre-expansion-text">
+                    <h3>Profile</h3>
+                </div>
+                <div class="slide-content" id="content1">
+                    <h3>Project Board 1</h3>
+                    <p>allow users to add profile photo to their project </p>
+                </div>
+            </div>
+            <div class="slide user-select-none" onclick="toggleSlide(2)">
+                <img src="background2.jpg" alt="Blurred Background">
+                <div class="pre-expansion-text">
+                    <h3>Pre-expansion Text 2</h3>
+                    <p>Description or details about the project before expansion</p>
+                </div>
+                <div class="slide-content" id="content2">
+                    <h3>Project Board 2</h3>
+                    <p>Description or details about the project</p>
+                </div>
+            </div>
+            <!-- Add more slides as needed -->
+
+            <div class="slide user-select-none" onclick="toggleSlide(3)">
+                <img src="background2.jpg" alt="Blurred Background">
+                <div class="pre-expansion-text">
+                    <h3>Pre-expansion Text 2</h3>
+                    <p>Description or details about the project before expansion</p>
+                </div>
+                <div class="slide-content" id="content2">
+                    <h3>Project Board 2</h3>
+                    <p>Description or details about the project</p>
+                </div>
+            </div>
+            <!-- Add more slides as needed -->
+
+            <div class="slide user-select-none" onclick="toggleSlide(4)">
+                <img src="background2.jpg" alt="Blurred Background">
+                <div class="pre-expansion-text">
+                    <h3>Pre-expansion Text 2</h3>
+                    <p>Description or details about the project before expansion</p>
+                </div>
+                <div class="slide-content" id="content2">
+                    <h3>Project Board 2</h3>
+                    <p>Description or details about the project</p>
+                </div>
+            </div>
+            <!-- Add more slides as needed -->
+
+            <div class="slide user-select-none" onclick="toggleSlide(5)">
+                <img src="background2.jpg" alt="Blurred Background">
+                <div class="pre-expansion-text">
+                    <h3>Pre-expansion Text 2</h3>
+                    <p>Description or details about the project before expansion</p>
+                </div>
+                <div class="slide-content" id="content2">
+                    <h3>Project Board 2</h3>
+                    <p>Description or details about the project</p>
+                </div>
+            </div>
+            <!-- Add more slides as needed -->
+
+            <div class="slide user-select-none" onclick="toggleSlide(6)">
+                <img src="background2.jpg" alt="Blurred Background">
+                <div class="pre-expansion-text">
+                    <h3>Pre-expansion Text 2</h3>
+                    <p>Description or details about the project before expansion</p>
+                </div>
+                <div class="slide-content" id="content2">
+                    <h3>Project Board 2</h3>
+                    <p>Description or details about the project</p>
+                </div>
+            </div>
+            <!-- Add more slides as needed -->
+
+            <div class="slide user-select-none" onclick="toggleSlide(7)">
+                <img src="background2.jpg" alt="Blurred Background">
+                <div class="pre-expansion-text">
+                    <h3>Pre-expansion Text 2</h3>
+                    <p>Description or details about the project before expansion</p>
+                </div>
+                <div class="slide-content" id="content2">
+             qsafdrdsxcccc       <h3>Project Board 2</h3>
+                    <p>Description or details about the project</p>
+                </div>
+            </div>
+            <!-- Add more slides as needed -->
+
+        </div>
+    </div>
+
+   <script>
+        let activeSlide = null;
+
+        function toggleSlide(slideIndex) {
+            const slides = document.querySelectorAll('.slide');
+            slides.forEach((s, index) => {
+                if (index + 1 === slideIndex) {
+                    s.classList.toggle('active');
+                    activeSlide = s.classList.contains('active') ? s : null;
+                } else {
+                    s.classList.remove('active');
+                }
+            });
+        }
+
+        document.addEventListener('click', (event) => {
+            const isInsideActiveSlide = activeSlide && activeSlide.contains(event.target);
+            if (!isInsideActiveSlide && activeSlide) {
+                activeSlide.classList.remove('active');
+                activeSlide = null;
+            }
+        });
+
+        const container = document.getElementById('carousel-container');
+
+window.addEventListener('keydown', (event) => {
+    switch (event.key) {
+        case 'ArrowUp':
+            container.scrollTop -= 50; // Scroll up
+            break;
+        case 'ArrowDown':
+            container.scrollTop += 50; // Scroll down
+            break;
+    }
+});
+    </script>
+</body>
+</html>
