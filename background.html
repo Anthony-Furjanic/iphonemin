@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Background</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .background {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-color: black;
+            overflow: hidden;
+        }
+
+        .orb {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(102, 153, 217, 0.5);
+            border-radius: 50%;
+            filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+    <div class="background" id="background">
+        <!-- Orbs will be dynamically added here using JavaScript -->
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const background = document.getElementById("background");
+
+            for (let i = 0; i < 17; i++) {
+                createOrb();
+            }
+
+            function createOrb() {
+                const orb = document.createElement("div");
+                orb.classList.add("orb");
+                orb.style.left = `${Math.random() * 200}vw`; // Wider range for viewport width
+                orb.style.top = `${Math.random() * 100}vh`; // Full range of viewport height
+
+                // Set slower animation duration
+                orb.style.setProperty('--animation-duration', '25s');
+
+                // Set wider range for random values in motion using CSS variables
+                orb.style.setProperty('--translate-x', `${Math.random() * 200 - 200}px`); // Wider range for horizontal motion
+                orb.style.setProperty('--translate-y', `${Math.random() * 200 - 100}px`); // Wider range for vertical motion
+                orb.style.setProperty('--rotate', `${Math.random() * 360}deg`); // Random rotation
+                orb.style.setProperty('--scale', `${Math.random() * 1.5 + 0.5}`); // Random scale
+
+                background.appendChild(orb);
+            }
+        });
+    </script>
+
+    <style>
+        @keyframes floatAnimation {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0) scale(1);
+            }
+            50% {
+                transform: translate(var(--translate-x), var(--translate-y)) rotate(var(--rotate)) scale(var(--scale));
+            }
+        }
+        .orb {
+            --animation-duration: 4s; /* Slower animation */
+            animation: floatAnimation var(--animation-duration) infinite linear;
+        }
+    </style>
+</body>
+</html>
