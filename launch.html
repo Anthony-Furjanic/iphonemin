@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f0f0f0;
+    }
+
+    .iphone-container {
+      width: 375px; /* Adjusted to iPhone 11 width */
+      height: 812px; /* Adjusted to iPhone 11 height */
+      margin: 20px auto;
+      background-color: #fff;
+      border: 10px solid #ccc; /* Border for illustration purposes */
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .status-bar {
+      height: 20px;
+      background-color: #333;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      background-color: #555;
+      color: #fff;
+    }
+
+    .header img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .apps-row {
+      display: flex;
+      gap: 10px; /* Adjusted gap between apps */
+      margin-top: 10px;
+    }
+
+    .app {
+      flex: 1;
+      color: #fff;
+      text-align: center;
+      border-radius: 10px;
+      padding: 10px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .app img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    .app-text {
+      text-align: center;
+      margin-top: 5px;
+      color: #555;
+    }
+
+    .footer {
+      height: 70px;
+      background-color: #555;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px;
+      margin-top: auto; /* Pushes the footer to the bottom */
+    }
+
+    .footer img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="iphone-container">
+    <div class="status-bar"></div>
+    <div class="header">
+      <img src="path/to/your/image.jpg" alt="Logo">
+      <div>A</div>
+    </div>
+    <div class="apps-row">
+      <div class="app">
+        <img src="path/to/app1-image.jpg" alt="App 1">
+        <div class="app-text">App 1</div>
+      </div>
+      <div class="app">
+        <img src="path/to/app2-image.jpg" alt="App 2">
+        <div class="app-text">App 2</div>
+      </div>
+      <div class="app">
+        <img src="path/to/app3-image.jpg" alt="App 3">
+        <div class="app-text">App 3</div>
+      </div>
+      <div class="app">
+        <img src="path/to/app4-image.jpg" alt="App 4">
+        <div class="app-text">App 4</div>
+      </div>
+    </div>
+    <div class="apps-row">
+      <div class="app">
+        <img src="path/to/app5-image.jpg" alt="App 5">
+        <div class="app-text">App 5</div>
+      </div>
+      <div class="app">
+        <img src="path/to/app6-image.jpg" alt="App 6">
+        <div class="app-text">App 6</div>
+      </div>
+      <div class="app">
+        <img src="path/to/app7-image.jpg" alt="App 7">
+        <div class="app-text">App 7</div>
+      </div>
+      <div class="app">
+        <img src="path/to/app8-image.jpg" alt="App 8">
+        <div class="app-text">App 8</div>
+      </div>
+    </div>
+    <div class="apps-row">
+      <div class="app">
+        <img src="path/to/app9-image.jpg" alt="App 9">
+        <div class="app-text">App 9</div>
+      </div>
+      <div class="app">
+        <img src="path/to/app10-image.jpg" alt="App 10">
+        <div class="app-text">App 10</div>
+      </div>
+      <div class="app">
+        <img src="path/to/app11-image.jpg" alt="App 11">
+        <div class="app-text">App 11</div>
+      </div>
+      <div class="app">
+        <img src="path/to/app12-image.jpg" alt="App 12">
+        <div class="app-text">App 12</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>Your Image</div>
+      <img src="path/to/your/image.jpg" alt="Footer Image">
+      <div>Your Image</div>
+    </div>
+  </div>
+</body>
+</html>
