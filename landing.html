@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How-To Guides</title>
+  <style>
+    body {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      caret:none;
+      user-select: none;
+    }
+
+    header {
+      background-color: #586168dc;
+      color: white;
+      text-align: center;
+      padding: 1em;
+      font-size: 1.5em;
+    }
+
+    main {
+      max-width:2800px;
+      margin: 20px auto;
+      padding: 20px;
+ 
+    
+      border-radius: 10px;
+    }
+
+    section {
+      margin-bottom: 20px; /* Space between sections */
+    }
+
+    h2 {
+      color: #8f9498;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    li {
+      width: calc(33.33% - 20px); /* 33.33% width with 20px spacing (adjust as needed) */
+      text-align: center;
+      padding: 20px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      box-shadow: 2px 2px 3px 3px rgba(139, 150, 165, 0.212);
+      box-sizing: border-box; /* Adjust spacing without margins */
+      margin-right: 20px; /* Space between items */
+      margin-bottom: 20px; /* Space between rows */
+      backdrop-filter: blur(10px);
+     background-color: transparent;
+    }
+
+    li:last-child {
+      margin-right: 0; /* Remove right margin for the last item in each row */
+    }
+
+    a {
+      text-decoration: none;
+      color: #a8a8a8;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+ 
+    input[type="text"] {
+      width: 40%;
+      padding: 10px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-shadow: 0 2px 5px rgba(37, 35, 35, 0.402);
+      border: 1px solid rgb(182, 182, 182);
+      margin-left: 30%; 
+      background-color: #eeeeee;
+      font-size: 17px;
+      border-width: 0px;
+      transition: ease-in-out 1s;
+      
+    }
+    /* Remove border on active input */
+input:focus {
+  outline: none;
+  border: none;
+  transform: scale(1.5);
+  transition: ease-in-out 1s;
+    color: #7e8082;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Guided Walk Throughs</h1>
+  </header>
+
+  <main>
+    <input type="text" id="searchInput" placeholder="search for scenarios...">
+
+    <section>
+      <h2>Section 1</h2>
+      <ul id="section1Cards">
+        <!-- Repeat the following li block for each how-to guide in Section 1 -->
+        <li>
+          <a href="#how-to-example1">How to Example ab</a>
+        </li>
+        <!-- Repeat the above li block for each how-to guide in Section 1 -->
+      </ul>
+    </section>
+
+    <section>
+      <h2>Section 2</h2>
+      <ul id="section2Cards">
+        <!-- Repeat the following li block for each how-to guide in Section 2 -->
+        <li>
+          <a href="#how-to-example2">How to Example 2</a>
+        </li>
+        <li>
+            <a href="#how-to-example2">ab</a>
+          </li>
+          <li>
+            <a href="#how-to-example2">ab</a>
+          </li>
+          <li>
+            <a href="#how-to-example2">How to ab</a>
+          </li>
+          <li>
+            <a href="#how-to-example2">How to Example 2</a>
+          </li>
+          <li>
+            <a href="#how-to-example2">How to sample 2</a>
+          </li>
+          <li>
+            <a href="#how-to-example2">How to Example 2</a>
+          </li>
+          <li>
+            <a href="#how-to-example2">How to Example 2</a>
+          </li>
+        <!-- Repeat the above li block for each how-to guide in Section 2 -->
+      </ul>
+    </section>
+
+    <section>
+      <h2>Section 3</h2>
+      <ul id="section3Cards">
+        <!-- Repeat the following li block for each how-to guide in Section 3 -->
+        <li>
+          <a href="#how-to-example3">How to Example 3</a>
+        </li>
+        <!-- Repeat the above li block for each how-to guide in Section 3 -->
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    // JavaScript code for search functionality
+    const sectionHeaders = document.querySelectorAll('section h2');
+
+    document.getElementById('searchInput').addEventListener('input', function () {
+      const searchInput = this.value.toLowerCase();
+      const allGuides = document.querySelectorAll('li');
+
+      // Show all section headers
+      sectionHeaders.forEach(function (header) {
+        header.style.display = 'block';
+      });
+
+      allGuides.forEach(function (guide) {
+        const guideText = guide.textContent.toLowerCase();
+        const isVisible = guideText.includes(searchInput);
+        guide.style.display = isVisible ? 'block' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
