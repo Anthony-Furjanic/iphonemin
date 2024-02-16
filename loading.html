@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            z-index: 9999;
+        }
+
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .content {
+            display: none;
+        }
+    </style>
+    <title>Your Website</title>
+</head>
+<body>
+    <div class="loading" id="loading-page">
+        <div class="spinner"></div>
+        <p class="loading-text">Loading...</p>
+    </div>
+
+    <div class="content" id="main-content">
+        <!-- Your main site content goes here -->
+        <h1>Welcome to Your Website!</h1>
+        <!-- Include your scripts at the end for better performance -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Simulating a delay for demonstration purposes (remove this in your actual implementation)
+                setTimeout(function() {
+                    // Hide the loading page and display the main content
+                    document.getElementById("loading-page").style.display = "none";
+                    document.getElementById("main-content").style.display = "block";
+                }, 2000); // 2000 milliseconds (2 seconds) delay for demonstration
+            });
+        </script>
+    </div>
+</body>
+</html>
