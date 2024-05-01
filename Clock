@@ -3,24 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simple Clock</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-
-  #clock {
-    font-size: 48px;
-  }
-</style>
+<title>Existing Page with Clock</title>
 </head>
-<body>
-<div id="clock"></div>
+<body style="font-family: Arial, sans-serif; color: white; text-align: center; background-color: black;">
+
+<!-- Your existing HTML content -->
+
+<div id="clock" style="font-size: 24px; margin-top: 20px;"></div>
+
+<!-- Your existing HTML content -->
 
 <script>
   function updateClock() {
@@ -38,5 +29,8 @@
   // Initial call to display the clock
   updateClock();
 </script>
+
+<!-- Your existing JavaScript or other scripts -->
+
 </body>
 </html>
